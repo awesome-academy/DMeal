@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">DMeal</string>
+    <string name="title_setting">Setting</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="title_ingredient">Ingredient</string>
+    <string name="title_category">Category</string>
 </resources>

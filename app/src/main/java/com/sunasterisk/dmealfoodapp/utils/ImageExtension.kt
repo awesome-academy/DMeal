@@ -1,8 +1,8 @@
-package com.example.dmeal.utils
+package com.sunasterisk.dmealfoodapp.utils
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.example.dmeal.R
+import com.sunasterisk.dmealfoodapp.R
 
 fun ImageView.loadImage(image: String) {
     Glide.with(context).load(image)

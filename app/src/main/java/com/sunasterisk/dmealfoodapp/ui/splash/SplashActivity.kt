@@ -1,10 +1,10 @@
-package com.example.dmeal.ui.splash
+package com.sunasterisk.dmealfoodapp.ui.splash
 
 import android.os.Handler
 import android.os.Looper
-import com.example.dmeal.R
-import com.example.dmeal.base.BaseActivity
-import com.example.dmeal.ui.main.MainActivity
+import com.sunasterisk.dmealfoodapp.R
+import com.sunasterisk.dmealfoodapp.base.BaseActivity
+import com.sunasterisk.dmealfoodapp.ui.main.MainActivity
 
 private const val TIME_WAITING = 2000L
 

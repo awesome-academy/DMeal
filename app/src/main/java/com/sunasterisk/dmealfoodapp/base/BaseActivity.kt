@@ -1,9 +1,9 @@
-package com.example.dmeal.base
+package com.sunasterisk.dmealfoodapp.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.dmeal.R
+import com.sunasterisk.dmealfoodapp.R
 
 abstract class BaseActivity(private val layout: Int) : AppCompatActivity() {
 

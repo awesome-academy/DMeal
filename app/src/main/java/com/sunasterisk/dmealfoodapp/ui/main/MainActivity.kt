@@ -1,9 +1,9 @@
-package com.example.dmeal.ui.main
+package com.sunasterisk.dmealfoodapp.ui.main
 
 import android.content.Context
 import android.content.Intent
-import com.example.dmeal.R
-import com.example.dmeal.base.BaseActivity
+import com.sunasterisk.dmealfoodapp.R
+import com.sunasterisk.dmealfoodapp.base.BaseActivity
 
 class MainActivity : BaseActivity(R.layout.activity_main) {
 

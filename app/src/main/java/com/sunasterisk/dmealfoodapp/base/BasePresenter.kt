@@ -1,4 +1,4 @@
-package com.example.dmeal.base
+package com.sunasterisk.dmealfoodapp.base
 
 interface BasePresenter {
     fun start()

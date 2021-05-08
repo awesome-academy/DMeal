@@ -1,4 +1,4 @@
-package com.example.dmeal.utils
+package com.sunasterisk.dmealfoodapp.utils
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

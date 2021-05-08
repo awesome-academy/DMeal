@@ -1,4 +1,4 @@
-package com.example.dmeal
+package com.sunasterisk.dmealfoodapp
 
 import org.junit.Test
 

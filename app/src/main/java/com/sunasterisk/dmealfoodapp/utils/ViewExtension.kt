@@ -1,4 +1,4 @@
-package com.example.dmeal.utils
+package com.sunasterisk.dmealfoodapp.utils
 
 import android.view.View
 

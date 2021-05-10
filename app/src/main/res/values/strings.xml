@@ -4,4 +4,7 @@
     <string name="title_favorite">Favorite</string>
     <string name="title_ingredient">Ingredient</string>
     <string name="title_category">Category</string>
+    <string name="title_exception">Loading data failed, exception occurred</string>
+    <string name="error">Error</string>
+
 </resources>

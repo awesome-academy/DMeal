@@ -11,4 +11,11 @@ interface MealDataSource {
         fun searchMeal(nameMeal: String, callback: OnDataCallback<List<Meal>>)
         fun getMealDetailByMeal(nameMeal: String, callback: OnDataCallback<List<Meal>>)
     }
+
+    interface Local{
+        fun insertMeal(meal: Meal, callback: OnDataCallback<Long>)
+        fun deleteMeal(mealId: String, callback: OnDataCallback<Boolean>)
+        fun getAllMeals(callback: OnDataCallback<List<Meal>>)
+        fun isFavorite(mealId: String, callback: OnDataCallback<Int>)
+    }
 }

@@ -13,7 +13,7 @@ object MealModelConst {
     const val STR_MEAL_THUMB = "strMealThumb"
 }
 
-object MealDetailConst{
+object MealDetailConst {
     const val MEAL_DETAIL_AREA = "strArea"
     const val MEAL_DETAIL_CATEGORY = "strCategory"
     const val MEAL_DETAIL_INGREDIENT = "strIngredient"
@@ -26,4 +26,9 @@ object IngredientModelConst {
     const val STR_INGREDIENT = "strIngredient"
     const val STR_DESCRIPTION = "strDescription"
     const val STR_TYPE = "strType"
+}
+
+object Constants {
+    const val MEALS = "meals"
+    const val CATEGORIES = "categories"
 }

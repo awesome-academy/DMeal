@@ -9,9 +9,13 @@ import com.sunasterisk.dmealfoodapp.data.source.MealDataSource
 import com.sunasterisk.dmealfoodapp.data.source.remote.MealCategoryRemoteDataSource
 import com.sunasterisk.dmealfoodapp.data.source.remote.MealRemoteDataSource
 import com.sunasterisk.dmealfoodapp.ui.category.adapter.MealCategoryAdapter
+import com.sunasterisk.dmealfoodapp.ui.listmeal.MealListFragment
+import com.sunasterisk.dmealfoodapp.ui.search.SearchFragment
 import com.sunasterisk.dmealfoodapp.utils.CustomProgressBar
+import com.sunasterisk.dmealfoodapp.utils.FragmentUtil
 import com.sunasterisk.dmealfoodapp.utils.showToast
 import kotlinx.android.synthetic.main.fragment_meal_category.*
+import kotlinx.android.synthetic.main.tool_bar_screen_parent.*
 
 class MealCategoryFragment : BaseFragment(R.layout.fragment_meal_category),
     MealCategoryContact.View {
@@ -33,6 +37,13 @@ class MealCategoryFragment : BaseFragment(R.layout.fragment_meal_category),
     }
 
     override fun initActions() {
+        buttonSearch.setOnClickListener {
+            FragmentUtil.addFragment(
+                parentFragmentManager,
+                R.id.fragmentContainer,
+                SearchFragment()
+            )
+        }
     }
 
     override fun showMealCategories(mealCategories: List<MealCategory>) {
@@ -57,5 +68,10 @@ class MealCategoryFragment : BaseFragment(R.layout.fragment_meal_category),
     }
 
     private fun itemMealCategoryClick(mealCategory: MealCategory) {
+        FragmentUtil.addFragment(
+            parentFragmentManager,
+            R.id.fragmentContainer,
+            MealListFragment.getInstance(mealCategory.id)
+        )
     }
 }

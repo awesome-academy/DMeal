@@ -6,5 +6,6 @@
     <color name="color_regent_gray">#8190A5</color>
     <color name="color_alto">#DFDFDF</color>
     <color name="color_alto_29">#4BDFDFDF</color>
+    <color name="color_semi_transparent">#60000000</color>
 
 </resources>

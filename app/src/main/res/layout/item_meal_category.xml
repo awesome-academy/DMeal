@@ -39,7 +39,7 @@
             style="@style/TextViewBold"
             android:gravity="center"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/sp_12"
+            android:textSize="@dimen/sp_14"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/imageMealCategory"
             app:layout_constraintStart_toStartOf="parent"

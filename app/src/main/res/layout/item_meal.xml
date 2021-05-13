@@ -11,7 +11,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imageMealCategory"
+            android:id="@+id/imageMeal"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:alpha="0.4"
@@ -30,18 +30,20 @@
             android:layout_height="0dp"
             android:background="@color/color_semi_transparent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="H,1:0.25"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textNameMealCategory"
+            android:id="@+id/textNameMeal"
             style="@style/TextViewBold"
+            android:layout_marginHorizontal="@dimen/dp_16"
             android:gravity="center"
+            android:maxLines="2"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/sp_18"
+            android:textSize="@dimen/sp_16"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageMealCategory"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/viewShadow" />
 

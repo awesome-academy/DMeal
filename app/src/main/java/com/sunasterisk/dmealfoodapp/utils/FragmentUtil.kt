@@ -16,7 +16,35 @@ object FragmentUtil {
             .apply {
                 setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 add(layoutId, fragment, tag)
+                addToBackStack(tag)
                 commit()
             }
+    }
+
+    fun replaceFragment(
+        fragmentManager: FragmentManager,
+        layoutId: Int,
+        fragment: Fragment,
+        tag: String? = null
+    ) {
+        fragmentManager.beginTransaction()
+            .apply {
+                setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                replace(layoutId, fragment, tag)
+                addToBackStack(tag)
+                commit()
+            }
+    }
+
+    fun backPress(
+        fragmentManager: FragmentManager,
+        fragment: Fragment
+    ) {
+        fragmentManager.apply {
+            popBackStack()
+            beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
+                .remove(fragment)
+                .commit()
+        }
     }
 }

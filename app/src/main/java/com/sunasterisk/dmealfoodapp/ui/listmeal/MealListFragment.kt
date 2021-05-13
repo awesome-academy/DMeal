@@ -16,10 +16,10 @@ class MealListFragment : BaseFragment(R.layout.fragment_meal_list) {
     }
 
     companion object {
-        const val MEAL_CATEGORY_ID = "MEAL_CATEGORY_ID"
+        const val MEAL_CATEGORY = "MEAL_CATEGORY"
 
-        fun getInstance(idMealCategory: Any) = MealListFragment().apply {
-            arguments = bundleOf(MEAL_CATEGORY_ID to idMealCategory)
+        fun getInstance(mealCategory: Any) = MealListFragment().apply {
+            arguments = bundleOf(MEAL_CATEGORY to mealCategory)
         }
     }
 }

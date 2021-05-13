@@ -71,7 +71,7 @@ class MealCategoryFragment : BaseFragment(R.layout.fragment_meal_category),
         FragmentUtil.addFragment(
             parentFragmentManager,
             R.id.fragmentContainer,
-            MealListFragment.getInstance(mealCategory.id)
+            MealListFragment.getInstance(mealCategory)
         )
     }
 }

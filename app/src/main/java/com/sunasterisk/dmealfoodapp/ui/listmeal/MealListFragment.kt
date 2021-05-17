@@ -11,8 +11,11 @@ import com.sunasterisk.dmealfoodapp.data.source.local.MealLocalDataSource
 import com.sunasterisk.dmealfoodapp.data.source.local.dao.MealDaoImpl
 import com.sunasterisk.dmealfoodapp.data.source.local.db.AppDatabase
 import com.sunasterisk.dmealfoodapp.data.source.remote.MealRemoteDataSource
+import com.sunasterisk.dmealfoodapp.ui.detailmeal.MealDetailFragment
 import com.sunasterisk.dmealfoodapp.ui.listmeal.adapter.MealListAdapter
+import com.sunasterisk.dmealfoodapp.ui.search.SearchFragment
 import com.sunasterisk.dmealfoodapp.utils.CustomProgressBar
+import com.sunasterisk.dmealfoodapp.utils.FragmentUtil
 import com.sunasterisk.dmealfoodapp.utils.showToast
 import kotlinx.android.synthetic.main.fragment_meal_list.*
 import kotlinx.android.synthetic.main.tool_bar_screen_child.*
@@ -45,6 +48,16 @@ class MealListFragment : BaseFragment(R.layout.fragment_meal_list), MealListCont
     }
 
     override fun initActions() {
+        buttonSearch.setOnClickListener {
+            FragmentUtil.addFragment(
+                parentFragmentManager,
+                R.id.fragmentContainer,
+                SearchFragment()
+            )
+        }
+        buttonBack.setOnClickListener {
+            FragmentUtil.backPress(parentFragmentManager, MealListFragment())
+        }
     }
 
     override fun showListMeal(listMeal: List<Meal>) {
@@ -76,6 +89,11 @@ class MealListFragment : BaseFragment(R.layout.fragment_meal_list), MealListCont
     }
 
     private fun itemMealClick(meal: Meal) {
+        FragmentUtil.addFragment(
+            parentFragmentManager,
+            R.id.fragmentContainer,
+            MealDetailFragment.getInstance(meal)
+        )
     }
 
     companion object {

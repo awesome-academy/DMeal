@@ -15,7 +15,7 @@ inline fun <reified T> String.parseJsonToObject() = JSONArray(this).run {
             Meal::class -> Meal(getJSONObject(index)) as T
             MealCategory::class -> MealCategory(getJSONObject(index)) as T
             MealDetail::class -> MealDetail(getJSONObject(index)) as T
-            else -> throw JSONException(R.string.error.toString())
+            else -> throw JSONException(getString(R.string.error_common))
         }
     }
 }

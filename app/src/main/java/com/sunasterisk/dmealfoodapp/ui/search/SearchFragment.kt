@@ -15,7 +15,7 @@ import com.sunasterisk.dmealfoodapp.data.source.local.dao.MealDaoImpl
 import com.sunasterisk.dmealfoodapp.data.source.local.db.AppDatabase
 import com.sunasterisk.dmealfoodapp.data.source.remote.MealRemoteDataSource
 import com.sunasterisk.dmealfoodapp.databinding.FragmentSearchBinding
-import com.sunasterisk.dmealfoodapp.ui.detailmeal.MealDetailFragment
+import com.sunasterisk.dmealfoodapp.ui.detailmeal.MealDetailActivity
 import com.sunasterisk.dmealfoodapp.ui.listmeal.adapter.MealListAdapter
 import com.sunasterisk.dmealfoodapp.utils.*
 
@@ -116,11 +116,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), SearchContact.View
     }
 
     private fun clickItemMeal(meal: Meal) {
-        FragmentUtil.addFragment(
-            parentFragmentManager,
-            R.id.fragmentContainer,
-            MealDetailFragment.getInstance(meal)
-        )
+        startActivity(MealDetailActivity.getInstance(context, meal))
     }
 
     private fun closeKeyboard() {

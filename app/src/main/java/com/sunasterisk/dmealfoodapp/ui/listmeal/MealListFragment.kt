@@ -13,8 +13,7 @@ import com.sunasterisk.dmealfoodapp.data.source.local.dao.MealDaoImpl
 import com.sunasterisk.dmealfoodapp.data.source.local.db.AppDatabase
 import com.sunasterisk.dmealfoodapp.data.source.remote.MealRemoteDataSource
 import com.sunasterisk.dmealfoodapp.databinding.FragmentMealListBinding
-import com.sunasterisk.dmealfoodapp.databinding.LayoutToolBarScreenChildBinding
-import com.sunasterisk.dmealfoodapp.ui.detailmeal.MealDetailFragment
+import com.sunasterisk.dmealfoodapp.ui.detailmeal.MealDetailActivity
 import com.sunasterisk.dmealfoodapp.ui.listmeal.adapter.MealListAdapter
 import com.sunasterisk.dmealfoodapp.ui.search.SearchFragment
 import com.sunasterisk.dmealfoodapp.utils.CustomProgressBar
@@ -95,11 +94,7 @@ class MealListFragment : BaseFragment<FragmentMealListBinding>(), MealListContac
     }
 
     private fun itemMealClick(meal: Meal) {
-        FragmentUtil.addFragment(
-            parentFragmentManager,
-            R.id.fragmentContainer,
-            MealDetailFragment.getInstance(meal)
-        )
+        startActivity(MealDetailActivity.getInstance(context, meal))
     }
 
     companion object {

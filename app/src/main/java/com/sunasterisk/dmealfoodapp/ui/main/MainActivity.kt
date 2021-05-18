@@ -6,11 +6,10 @@ import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.sunasterisk.dmealfoodapp.R
 import com.sunasterisk.dmealfoodapp.base.BaseActivity
+import com.sunasterisk.dmealfoodapp.databinding.ActivityMainBinding
 import com.sunasterisk.dmealfoodapp.ui.category.MealCategoryFragment
-import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : BaseActivity(R.layout.activity_main) {
-
+class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private val onBottomNavigationView =
         BottomNavigationView.OnNavigationItemSelectedListener { item: MenuItem ->
@@ -20,8 +19,10 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
             true
         }
 
+    override fun getViewBinding() = ActivityMainBinding.inflate(layoutInflater)
+
     override fun onCreatedView() {
-        bottomNavigationView.apply {
+        binding.bottomNavigationView.apply {
             setOnNavigationItemSelectedListener(onBottomNavigationView)
             selectedItemId = R.id.menuCategory
         }
@@ -30,4 +31,5 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
     companion object {
         fun getIntent(context: Context): Intent = Intent(context, MainActivity::class.java)
     }
+
 }

@@ -4,7 +4,7 @@ import android.os.Parcelable
 import com.sunasterisk.dmealfoodapp.utils.MealModelConst.STR_MEAL
 import com.sunasterisk.dmealfoodapp.utils.MealModelConst.STR_MEAL_THUMB
 import com.sunasterisk.dmealfoodapp.utils.MealDetailConst
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 import org.json.JSONObject
 
 @Parcelize

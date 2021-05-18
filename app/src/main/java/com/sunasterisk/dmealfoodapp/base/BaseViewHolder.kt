@@ -2,14 +2,16 @@ package com.sunasterisk.dmealfoodapp.base
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewbinding.ViewBinding
+import com.sunasterisk.dmealfoodapp.data.model.MealCategory
 
-abstract class BaseViewHolder<T>(itemView: View, onItemClick: (T) -> Unit) :
-    RecyclerView.ViewHolder(itemView) {
+abstract class BaseViewHolder<T>(binding: ViewBinding, onItemClick: (T) -> Unit) :
+    RecyclerView.ViewHolder(binding.root) {
 
     private var itemData: T? = null
 
     init {
-        itemView.setOnClickListener { itemData?.let { onItemClick(it) } }
+        binding.root.setOnClickListener { itemData?.let { onItemClick(it) } }
     }
 
     open fun onBindData(itemData: T) {

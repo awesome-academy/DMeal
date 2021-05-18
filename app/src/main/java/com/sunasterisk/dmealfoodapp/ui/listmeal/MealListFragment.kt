@@ -1,6 +1,7 @@
 package com.sunasterisk.dmealfoodapp.ui.listmeal
 
-import android.os.Parcelable
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import com.sunasterisk.dmealfoodapp.R
 import com.sunasterisk.dmealfoodapp.base.BaseFragment
@@ -11,23 +12,28 @@ import com.sunasterisk.dmealfoodapp.data.source.local.MealLocalDataSource
 import com.sunasterisk.dmealfoodapp.data.source.local.dao.MealDaoImpl
 import com.sunasterisk.dmealfoodapp.data.source.local.db.AppDatabase
 import com.sunasterisk.dmealfoodapp.data.source.remote.MealRemoteDataSource
+import com.sunasterisk.dmealfoodapp.databinding.FragmentMealListBinding
+import com.sunasterisk.dmealfoodapp.databinding.LayoutToolBarScreenChildBinding
 import com.sunasterisk.dmealfoodapp.ui.detailmeal.MealDetailFragment
 import com.sunasterisk.dmealfoodapp.ui.listmeal.adapter.MealListAdapter
 import com.sunasterisk.dmealfoodapp.ui.search.SearchFragment
 import com.sunasterisk.dmealfoodapp.utils.CustomProgressBar
 import com.sunasterisk.dmealfoodapp.utils.FragmentUtil
 import com.sunasterisk.dmealfoodapp.utils.showToast
-import kotlinx.android.synthetic.main.fragment_meal_list.*
-import kotlinx.android.synthetic.main.tool_bar_screen_child.*
 
-class MealListFragment : BaseFragment(R.layout.fragment_meal_list), MealListContact.View {
+
+class MealListFragment : BaseFragment<FragmentMealListBinding>(), MealListContact.View {
 
     private val mealListAdapter = MealListAdapter(this::itemMealClick)
     private val loadingProgressBar = CustomProgressBar()
     private var presenter: MealListContact.Presenter? = null
 
+
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentMealListBinding =
+        FragmentMealListBinding::inflate
+
     override fun onCreatedView() {
-        recyclerViewMeal.adapter = mealListAdapter
+        binding.recyclerViewMeal.adapter = mealListAdapter
     }
 
     override fun initData() {
@@ -48,14 +54,14 @@ class MealListFragment : BaseFragment(R.layout.fragment_meal_list), MealListCont
     }
 
     override fun initActions() {
-        buttonSearch.setOnClickListener {
+        binding.buttonSearch.setOnClickListener {
             FragmentUtil.addFragment(
                 parentFragmentManager,
                 R.id.fragmentContainer,
                 SearchFragment()
             )
         }
-        buttonBack.setOnClickListener {
+        binding.buttonBack.setOnClickListener {
             FragmentUtil.backPress(parentFragmentManager, MealListFragment())
         }
     }
@@ -83,7 +89,7 @@ class MealListFragment : BaseFragment(R.layout.fragment_meal_list), MealListCont
 
     private fun getTransferredData() {
         arguments?.getParcelable<MealCategory>(MEAL_CATEGORY)?.apply {
-            textTitleScreen.text = name
+            binding.textTitle.text = name
             presenter?.getListMealByCategory(this)
         }
     }

@@ -8,4 +8,5 @@
     <string name="error_common">Error</string>
     <string name="msg_please_wait">Please wait</string>
     <string name="title_search">Search…</string>
+    <string name="text_fill_name_meal">Please fill name meal</string>
 </resources>

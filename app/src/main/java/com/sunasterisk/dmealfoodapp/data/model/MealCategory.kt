@@ -5,7 +5,7 @@ import com.sunasterisk.dmealfoodapp.utils.MealCategoryModelConst.ID_CATEGORY
 import com.sunasterisk.dmealfoodapp.utils.MealCategoryModelConst.STR_CATEGORY
 import com.sunasterisk.dmealfoodapp.utils.MealCategoryModelConst.STR_CATEGORY_DESCRIPTION
 import com.sunasterisk.dmealfoodapp.utils.MealCategoryModelConst.STR_CATEGORY_THUMB
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 import org.json.JSONObject
 
 @Parcelize

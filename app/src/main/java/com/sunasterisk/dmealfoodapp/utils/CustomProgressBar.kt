@@ -12,29 +12,30 @@ import android.graphics.drawable.Drawable
 import android.os.Build
 import androidx.core.content.res.ResourcesCompat
 import com.sunasterisk.dmealfoodapp.R
-import kotlinx.android.synthetic.main.custom_progress_bar.view.*
+import com.sunasterisk.dmealfoodapp.databinding.CustomProgressBarBinding
 
 class CustomProgressBar {
+
     lateinit var dialog: CustomDialog
 
     @SuppressLint("ResourceAsColor")
     fun showProgressBar(context: Context, title: CharSequence?): Dialog {
         val inflater = (context as Activity).layoutInflater
-        val view = inflater.inflate(R.layout.custom_progress_bar, null)
+        val binding = CustomProgressBarBinding.inflate(inflater)
         if (title != null) {
-            view.textTitle.text = title
+            binding.textMessage.text = title
         }
-        view.cardViewCustom.setCardBackgroundColor(R.color.color_alto)
+        binding.cardViewCustom.setCardBackgroundColor(R.color.color_alto)
 
         setColorFilter(
-            view.progressBarLoading.indeterminateDrawable,
+            binding.progressBarLoading.indeterminateDrawable,
             ResourcesCompat.getColor(context.resources, R.color.color_mountain_meadow, null)
         )
-        view.textTitle.setTextColor(Color.WHITE)
+        binding.textMessage.setTextColor(Color.WHITE)
 
         dialog = CustomDialog(context)
         dialog.apply {
-            setContentView(view)
+            setContentView(binding.root)
             show()
         }
         return dialog

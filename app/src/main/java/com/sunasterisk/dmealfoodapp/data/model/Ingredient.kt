@@ -6,8 +6,7 @@ import android.os.Parcelable
 import com.sunasterisk.dmealfoodapp.utils.IngredientModelConst.ID_INGREDIENT
 import com.sunasterisk.dmealfoodapp.utils.IngredientModelConst.STR_DESCRIPTION
 import com.sunasterisk.dmealfoodapp.utils.IngredientModelConst.STR_INGREDIENT
-import com.sunasterisk.dmealfoodapp.utils.IngredientModelConst.STR_TYPE
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 import org.json.JSONObject
 
 @Parcelize

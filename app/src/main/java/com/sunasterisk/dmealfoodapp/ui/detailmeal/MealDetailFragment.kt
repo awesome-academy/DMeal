@@ -1,11 +1,17 @@
 package com.sunasterisk.dmealfoodapp.ui.detailmeal
 
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import com.sunasterisk.dmealfoodapp.R
 import com.sunasterisk.dmealfoodapp.base.BaseFragment
 import com.sunasterisk.dmealfoodapp.data.model.Meal
+import com.sunasterisk.dmealfoodapp.databinding.FragmentMealDetailBinding
 
-class MealDetailFragment : BaseFragment(R.layout.fragment_meal_detail) {
+class MealDetailFragment : BaseFragment<FragmentMealDetailBinding>() {
+
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentMealDetailBinding =
+        FragmentMealDetailBinding::inflate
 
     override fun onCreatedView() {
 

@@ -1,6 +1,7 @@
 package com.sunasterisk.dmealfoodapp.data.source.remote
 
 import com.sunasterisk.dmealfoodapp.data.model.Meal
+import com.sunasterisk.dmealfoodapp.data.model.MealDetail
 import com.sunasterisk.dmealfoodapp.data.source.MealDataSource
 import com.sunasterisk.dmealfoodapp.data.source.remote.api.ApiConstants
 import com.sunasterisk.dmealfoodapp.data.source.remote.api.ApiQuery
@@ -32,8 +33,8 @@ class MealRemoteDataSource private constructor() : MealDataSource.Remote {
         }.execute(Unit)
     }
 
-    override fun getMealDetailByMeal(nameMeal: String, callback: OnDataCallback<List<Meal>>) {
-        LoadDataAsync<Unit, List<Meal>>(callback) {
+    override fun getMealDetailByMeal(nameMeal: String, callback: OnDataCallback<List<MealDetail>>) {
+        LoadDataAsync<Unit, List<MealDetail>>(callback) {
             getMealDetailByMeal(nameMeal)
         }.execute(Unit)
     }
@@ -46,7 +47,7 @@ class MealRemoteDataSource private constructor() : MealDataSource.Remote {
         JSONObject(connectDownloadData(ApiQuery.queryMealByIngredient(nameIngredient)))
             .getString(Constants.MEALS).parseJsonToObject()
 
-    private fun getMealDetailByMeal(idMeal: String): List<Meal> =
+    private fun getMealDetailByMeal(idMeal: String): List<MealDetail> =
         JSONObject(connectDownloadData(ApiQuery.queryMealDetail(idMeal)))
             .getString(Constants.MEALS).parseJsonToObject()
 

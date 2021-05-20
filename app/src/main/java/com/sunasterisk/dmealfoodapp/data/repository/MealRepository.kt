@@ -1,6 +1,7 @@
 package com.sunasterisk.dmealfoodapp.data.repository
 
 import com.sunasterisk.dmealfoodapp.data.model.Meal
+import com.sunasterisk.dmealfoodapp.data.model.MealDetail
 import com.sunasterisk.dmealfoodapp.data.source.MealDataSource
 import com.sunasterisk.dmealfoodapp.data.source.ultils.OnDataCallback
 
@@ -21,7 +22,7 @@ class MealRepository private constructor(
         remote.searchMeal(nameMeal, callback)
     }
 
-    override fun getMealDetailByMeal(nameMeal: String, callback: OnDataCallback<List<Meal>>) {
+    override fun getMealDetailByMeal(nameMeal: String, callback: OnDataCallback<List<MealDetail>>) {
         remote.getMealDetailByMeal(nameMeal, callback)
     }
 

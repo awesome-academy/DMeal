@@ -31,4 +31,5 @@ object IngredientModelConst {
 object Constants {
     const val MEALS = "meals"
     const val CATEGORIES = "categories"
+    const val BASE_URL_VIDEO = "https://www.youtube.com/watch?v="
 }

@@ -11,4 +11,5 @@
     <string name="text_fill_name_meal">Please fill name meal</string>
     <string name="msg_insert_success">Insert Success</string>
     <string name="msg_delete_success">Delete Success</string>
+    <string name="text_meal_related">Meal related</string>
 </resources>

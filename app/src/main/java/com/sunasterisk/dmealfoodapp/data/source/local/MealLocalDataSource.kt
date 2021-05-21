@@ -26,7 +26,7 @@ class MealLocalDataSource private constructor(
     override fun getAllMeals(callback: OnDataCallback<List<Meal>>) {
         LoadDataAsync<Unit, List<Meal>>(callback) {
             mealDao.getAllMeals()
-        }.execute()
+        }.execute(Unit)
     }
 
     override fun isFavorite(mealId: String, callback: OnDataCallback<Int>) {

@@ -8,6 +8,7 @@ import com.sunasterisk.dmealfoodapp.R
 import com.sunasterisk.dmealfoodapp.base.BaseActivity
 import com.sunasterisk.dmealfoodapp.databinding.ActivityMainBinding
 import com.sunasterisk.dmealfoodapp.ui.category.MealCategoryFragment
+import com.sunasterisk.dmealfoodapp.ui.favorite.MealFavoriteFragment
 import com.sunasterisk.dmealfoodapp.ui.ingredient.IngredientListFragment
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -17,6 +18,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             when (item.itemId) {
                 R.id.menuCategory -> openFragment(MealCategoryFragment())
                 R.id.menuIngredient -> openFragment(IngredientListFragment())
+                R.id.menuFavorite -> openFragment(MealFavoriteFragment())
             }
             true
         }

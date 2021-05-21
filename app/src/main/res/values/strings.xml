@@ -12,4 +12,14 @@
     <string name="msg_insert_success">Insert Success</string>
     <string name="msg_delete_success">Delete Success</string>
     <string name="text_meal_related">Meal related</string>
+    <string name="text_notification">Notification</string>
+    <string name="text_about_me">About me</string>
+    <string name="title_collapsed">DMeal Message!</string>
+    <string name="text_collapsed">Show</string>
+    <string name="text_click_more">Click for more details!</string>
+    <string name="text_version">Version 1.1.1</string>
+    <string name="text_content_introduce">Content on apps that are searched on the  internet we are not responsible for the accuracy  of the content.</string>
+    <string name="text_author">Application developed by trainee Sun*</string>
+    <string name="text_contact">Contact us via:</string>
+    <string name="text_email">vu.tien.dat-b@sun-asterisk.com</string>
 </resources>

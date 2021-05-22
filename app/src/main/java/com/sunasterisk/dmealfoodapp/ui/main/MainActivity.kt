@@ -10,6 +10,7 @@ import com.sunasterisk.dmealfoodapp.databinding.ActivityMainBinding
 import com.sunasterisk.dmealfoodapp.ui.category.MealCategoryFragment
 import com.sunasterisk.dmealfoodapp.ui.favorite.MealFavoriteFragment
 import com.sunasterisk.dmealfoodapp.ui.ingredient.IngredientListFragment
+import com.sunasterisk.dmealfoodapp.ui.setting.SettingFragment
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
@@ -19,6 +20,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 R.id.menuCategory -> openFragment(MealCategoryFragment())
                 R.id.menuIngredient -> openFragment(IngredientListFragment())
                 R.id.menuFavorite -> openFragment(MealFavoriteFragment())
+                R.id.menuSetting -> openFragment(SettingFragment())
             }
             true
         }
